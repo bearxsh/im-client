@@ -36,7 +36,7 @@ public class ClientApplication {
                         protected void initChannel(SocketChannel ch) {
                             ChannelPipeline pipeline = ch.pipeline();
                             pipeline.addLast(new LoggingHandler(LogLevel.INFO));
-                            pipeline.addLast(new ClientHandler("{\"type\":1,\"name\":\"lisi\"}"));
+                            pipeline.addLast(new ClientHandler("{\"type\":1,\"name\":\"zhangsan\"}"));
                         }
                     });
             ChannelFuture future = bootstrap.connect(HOST, PORT).sync();

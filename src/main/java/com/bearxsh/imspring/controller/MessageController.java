@@ -18,10 +18,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("/msg")
 public class MessageController {
+
     @GetMapping("/send")
     public void sendMessage(@RequestParam("dest") String dest, @RequestParam("msg") String msg) {
-        System.out.println("send: " + msg);
-        System.out.println("send: " + dest);
         Map<String, Object> map = new HashMap(3);
         map.put("type", 2);
         map.put("dest", dest);
@@ -34,4 +33,5 @@ public class MessageController {
         }
         ClientHandler.channel.writeAndFlush(buffer);
     }
+
 }
